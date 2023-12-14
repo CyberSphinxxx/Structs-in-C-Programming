@@ -1,0 +1,66 @@
+/*
+A struct is a composite data type in C that allows you to group variables of different data types under a single name.
+It enables you to create a record or object that can hold multiple pieces of related information.
+
+Declaration:
+Structs are declared using the struct keyword, followed by the struct name and a block containing variable declarations.
+
+Example:
+struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+
+Initialization:
+You can initialize a struct at the time of declaration.
+Example:
+struct Person person1 = {"John", 25, 175.5};
+
+Accessing Members:
+Struct members are accessed using the dot (.) operator.
+Example:
+printf("Name: %s\n", person1.name);
+printf("Age: %d\n", person1.age);
+printf("Height: %.2f\n", person1.height);
+
+Nested Structs:
+You can have structs within structs, creating nested structures.
+Example:
+struct Address {
+    char city[50];
+    char state[50];
+};
+
+struct Person {
+    char name[50];
+    int age;
+    struct Address address;
+};
+
+Pointer to Struct:
+You can use pointers to access and modify struct members dynamically.
+Example:
+struct Person person2 = {"Alice", 30, 160.0};
+struct Person *ptrPerson = &person2;
+printf("Name: %s\n", ptrPerson->name);
+
+Typedef for Struct:
+typedef can be used to create an alias for a struct, making the code more readable.
+Example:
+typedef struct {
+    int hours;
+    int minutes;
+    int seconds;
+} Time;
+
+Passing Structs to Functions:
+You can pass structs to functions either by value or by reference using pointers.
+Example:
+void displayPerson(struct Person p) {
+    printf("Name: %s, Age: %d\n", p.name, p.age);
+}
+
+Understanding and effectively using structs is fundamental to organizing and managing data in C programming.
+They provide a powerful way to represent complex data structures.
+*/
